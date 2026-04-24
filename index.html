@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grupo Estepa — Wireframe</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/cal-sans" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── NAV ─────────────────────────────────────────────── -->
+  <header class="nav">
+    <div class="nav__brand">
+      <img src="img/logo-hero.svg" alt="Grupo Estepa" class="nav__logo">
+    </div>
+    <nav class="nav__menu" aria-label="Menú principal">
+      <a href="#que-hacemos">Qué hacemos</a>
+      <a href="#publico-privado">Público + Privado</a>
+      <a href="#areas">Áreas</a>
+      <a href="#metodologia">Metodología</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="#contacto" class="nav__cta">Conversemos →</a>
+  </header>
+
+  <main>
+
+    <!-- ── 01. HERO ──────────────────────────────────────── -->
+    <section class="hero" id="hero">
+      <video class="hero__video" autoplay muted loop playsinline>
+        <source src="img/videos/hero4.mp4" type="video/mp4">
+      </video>
+
+      <div class="hero__meta">
+        <span>01 — Hero</span>
+        <span>Patagonia · AR</span>
+      </div>
+
+      <h1 class="hero__title">
+        Pisamos<br>
+        la estepa<br>
+        hace años
+      </h1>
+
+      <p class="hero__sub">
+        Consultoría integral para organizaciones públicas y privadas
+        de la Patagonia. Acompañamos desde la región, con mirada
+        interdisciplinaria.
+      </p>
+
+      <div class="hero__ctas">
+        <a href="#contacto" class="btn btn--solid">Conversemos</a>
+        <a href="#contacto" class="btn btn--ghost">WhatsApp</a>
+      </div>
+
+      <div class="hero__scroll">↓ scroll</div>
+    </section>
+
+
+    <!-- ── 02. QUÉ HACEMOS ───────────────────────────────── -->
+    <section class="section" id="que-hacemos">
+      <header class="section__head">
+        <span class="section__num">02</span>
+        <span class="section__kicker">Qué hacemos</span>
+      </header>
+
+      <h2 class="section__title">
+        Acompañamos<br>
+        organizaciones<br>
+        de otra manera
+      </h2>
+
+      <p class="section__lead">
+        Impulsamos organizaciones hacia modelos de gestión modernos,
+        eficientes y sostenibles. Diseñamos soluciones a medida para
+        cada cliente, con equipos específicos para cada proyecto.
+      </p>
+
+      <div class="grid-4">
+        <article class="block">
+          <span class="block__num">01</span>
+          <span class="block__ico" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/></svg>
+          </span>
+          <h3>Mirada integral</h3>
+          <p>Abordamos cada desafío desde múltiples disciplinas.
+             Diagnósticos profundos, soluciones completas.</p>
+        </article>
+
+        <article class="block">
+          <span class="block__num">02</span>
+          <span class="block__ico" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><polygon points="24,6 42,40 6,40"/></svg>
+          </span>
+          <h3>Red de profesionales</h3>
+          <p>Armamos un equipo específico para cada proyecto.
+             Las personas correctas para el problema correcto.</p>
+        </article>
+
+        <article class="block">
+          <span class="block__num">03</span>
+          <span class="block__ico" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><line x1="4" y1="24" x2="44" y2="24"/></svg>
+          </span>
+          <h3>Enfoque regional</h3>
+          <p>Somos patagónicos. Conocemos la industria,
+             las instituciones y los contextos de Neuquén y Río Negro.</p>
+        </article>
+
+        <article class="block">
+          <span class="block__num">04</span>
+          <span class="block__ico" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><rect x="8" y="8" width="32" height="32"/></svg>
+          </span>
+          <h3>Soluciones a medida</h3>
+          <p>No vendemos paquetes cerrados. Diseñamos cada
+             intervención sobre la realidad concreta del cliente.</p>
+        </article>
+      </div>
+    </section>
+
+
+    <!-- ── 03. PÚBLICO + PRIVADO ─────────────────────────── -->
+    <section class="section section--dual" id="publico-privado">
+      <header class="section__head">
+        <span class="section__num">03</span>
+        <span class="section__kicker">Público + Privado</span>
+      </header>
+
+      <h2 class="section__title section__title--xl">
+        Donde se encuentran<br>
+        <em>lo público</em> y <em>lo privado</em>
+      </h2>
+
+      <p class="section__lead">
+        Creemos en la articulación virtuosa entre ambos mundos.
+        El sector privado genera inversión, trabajo y riqueza.
+        El sector público define las reglas, orienta el desarrollo
+        y amplía las oportunidades. Cuando se encuentran bien,
+        crece la región.
+      </p>
+
+      <div class="dual">
+        <article class="dual__col">
+          <span class="dual__tag">Columna A</span>
+          <h3>Sector Privado</h3>
+          <p class="dual__lead">Acompañamos a empresas a
+             profesionalizarse y crecer.</p>
+          <ul>
+            <li>Desarrollo y fortalecimiento de proveedores locales</li>
+            <li>Preparación para licitaciones y contrataciones públicas</li>
+            <li>Profesionalización de PyMEs y empresas familiares</li>
+            <li>Vinculación con grandes operadoras del sector energético e industrial</li>
+          </ul>
+        </article>
+
+        <div class="dual__hinge" aria-hidden="true">
+          <span>⇄</span>
+        </div>
+
+        <article class="dual__col dual__col--b">
+          <span class="dual__tag">Columna B</span>
+          <h3>Sector Público</h3>
+          <p class="dual__lead">Acompañamos al Estado a planificar
+             y gestionar mejor.</p>
+          <ul>
+            <li>Diseño y planificación de políticas públicas</li>
+            <li>Medición de impacto de programas e iniciativas</li>
+            <li>Fortalecimiento de equipos técnicos municipales y provinciales</li>
+            <li>Políticas de empleo, capacitación y fomento productivo</li>
+          </ul>
+        </article>
+      </div>
+
+      <aside class="articulation">
+        <span class="articulation__tag">Articulación</span>
+        <p>
+          Y cuando ambos se encuentran, <strong>aparecen los proyectos
+          más interesantes.</strong> Desarrollo de proveedores, creación
+          de institutos de formación, políticas de fomento a la inversión,
+          programas de empleo joven, articulación de cadenas de valor
+          regionales.
+        </p>
+      </aside>
+    </section>
+
+
+    <!-- ── 04. ÁREAS DE TRABAJO ──────────────────────────── -->
+    <section class="section" id="areas">
+      <header class="section__head">
+        <span class="section__num">04</span>
+        <span class="section__kicker">Áreas de trabajo</span>
+      </header>
+
+      <h2 class="section__title">
+        Todo lo que una<br>
+        organización necesita,<br>
+        en un solo lugar
+      </h2>
+
+      <p class="section__lead">
+        Cada área funciona de manera autónoma, pero trabaja en red
+        con las demás. Así garantizamos que cada solución sea profunda
+        en su campo e integrada con el resto de la organización.
+      </p>
+
+      <div class="grid-3">
+        <article class="card">
+          <header class="card__head">
+            <span class="card__num">01</span>
+            <span class="card__ico" aria-hidden="true">
+              <svg viewBox="0 0 40 40"><rect x="6" y="6" width="28" height="28"/><line x1="6" y1="20" x2="34" y2="20"/></svg>
+            </span>
+          </header>
+          <h3>Análisis y Gestión Organizacional</h3>
+          <p class="card__pitch">Ordenamos el funcionamiento interno
+             de la organización.</p>
+          <p class="card__desc">Analizamos cómo se estructuran los
+             procesos, cómo circula la información y cómo se coordinan
+             los equipos.</p>
+          <ul>
+            <li>Diagnóstico organizacional</li>
+            <li>Rediseño de procesos y circuitos de trabajo</li>
+            <li>Sistemas de información y tableros de gestión</li>
+            <li>Liderazgo y coordinación de equipos</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <header class="card__head">
+            <span class="card__num">02</span>
+            <span class="card__ico" aria-hidden="true">
+              <svg viewBox="0 0 40 40"><polyline points="6,30 16,18 24,24 34,10"/></svg>
+            </span>
+          </header>
+          <h3>Administrativa, Contable y Financiera</h3>
+          <p class="card__pitch">Ordenamos el manejo económico de
+             la organización.</p>
+          <p class="card__desc">Trabajamos sobre los procesos
+             administrativos, la información contable y la planificación
+             financiera.</p>
+          <ul>
+            <li>Diagnóstico administrativo y financiero</li>
+            <li>Diseño de circuitos de control interno</li>
+            <li>Presupuestos e indicadores económico-financieros</li>
+            <li>Implementación y seguimiento de herramientas de gestión</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <header class="card__head">
+            <span class="card__num">03</span>
+            <span class="card__ico" aria-hidden="true">
+              <svg viewBox="0 0 40 40"><path d="M20 4 L34 12 L34 28 L20 36 L6 28 L6 12 Z"/></svg>
+            </span>
+          </header>
+          <h3>Consultoría Jurídico-Legal</h3>
+          <p class="card__pitch">Seguridad jurídica para cada decisión.</p>
+          <p class="card__desc">Asesoramiento legal integral para
+             organizaciones públicas y privadas. Prevenimos riesgos
+             y aportamos claridad.</p>
+          <ul>
+            <li>Derecho empresarial y societario</li>
+            <li>Derecho laboral y previsional</li>
+            <li>Contrataciones públicas y licitaciones</li>
+            <li>Derecho regulatorio, energético y ambiental</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <header class="card__head">
+            <span class="card__num">04</span>
+            <span class="card__ico" aria-hidden="true">
+              <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="14"/><line x1="20" y1="6" x2="20" y2="34"/></svg>
+            </span>
+          </header>
+          <h3>Informática y Ciberseguridad</h3>
+          <p class="card__pitch">Protegemos los activos digitales de
+             la organización.</p>
+          <p class="card__desc">Diseñamos infraestructura tecnológica,
+             políticas de seguridad y procesos digitales alineados a
+             estándares internacionales.</p>
+          <ul>
+            <li>Auditoría de infraestructura y costos tecnológicos</li>
+            <li>Políticas y protocolos de ciberseguridad</li>
+            <li>Optimización de recursos cloud y almacenamiento</li>
+            <li>Capacitación y concientización interna</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <header class="card__head">
+            <span class="card__num">05</span>
+            <span class="card__ico" aria-hidden="true">
+              <svg viewBox="0 0 40 40"><line x1="6" y1="14" x2="34" y2="14"/><line x1="6" y1="22" x2="28" y2="22"/><line x1="6" y1="30" x2="22" y2="30"/></svg>
+            </span>
+          </header>
+          <h3>Comunicación Estratégica y Marketing</h3>
+          <p class="card__pitch">Fortalecemos la voz y la presencia de
+             la organización.</p>
+          <p class="card__desc">Diseñamos estrategias de comunicación
+             institucional, interna, digital y de marca.</p>
+          <ul>
+            <li>Diagnóstico de comunicación y posicionamiento</li>
+            <li>Estrategia de comunicación institucional e interna</li>
+            <li>Marketing digital y plan de contenidos</li>
+            <li>Identidad de marca y producción audiovisual</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <header class="card__head">
+            <span class="card__num">06</span>
+            <span class="card__ico" aria-hidden="true">
+              <svg viewBox="0 0 40 40"><rect x="6" y="8" width="28" height="24"/><line x1="6" y1="16" x2="34" y2="16"/></svg>
+            </span>
+          </header>
+          <h3>Capacitación y Formación</h3>
+          <p class="card__pitch">Desarrollamos capacidades en equipos
+             e instituciones.</p>
+          <p class="card__desc">Programas de formación a medida para
+             niveles profesionales, gerenciales y de decisión.</p>
+          <ul>
+            <li>Formación profesional y gerencial</li>
+            <li>Seguridad y herramientas informáticas</li>
+            <li>Salud laboral, salud mental y consumos problemáticos</li>
+            <li>Género, masculinidades y finanzas personales</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+
+    <!-- ── 05. METODOLOGÍA ───────────────────────────────── -->
+    <section class="section section--metodologia" id="metodologia">
+      <header class="section__head">
+        <span class="section__num">05</span>
+        <span class="section__kicker">Cómo trabajamos</span>
+      </header>
+
+      <h2 class="section__title">
+        Un proceso claro,<br>
+        de punta a punta.
+      </h2>
+
+      <p class="section__lead">
+        Cuatro etapas que ordenan el recorrido desde la primera reunión hasta la evaluación de resultados. Cada una tiene un inicio, un entregable y un cierre.
+      </p>
+
+      <p class="section__sublead">
+        Podés contratar el proceso completo o empezar por la etapa que necesites.
+      </p>
+
+      <div class="timeline-track">
+
+        <!-- Línea vertical animada (solo mobile) -->
+        <div class="timeline-vline" aria-hidden="true"></div>
+
+        <ol class="timeline">
+          <li class="stage">
+            <div class="stage__body">
+              <span class="stage__node" aria-hidden="true"></span>
+              <span class="stage__step" aria-hidden="true">01</span>
+              <h3 class="stage__title">Diagnóstico</h3>
+              <p class="stage__subtitle">Entendemos qué está pasando.</p>
+              <p class="stage__desc">Nos sentamos con quienes conducen la organización para mapear desafíos, cuellos de botella y oportunidades. Salís de esta etapa con un diagnóstico escrito y una propuesta de mejora priorizada.</p>
+              <span class="stage__deliverable">Entregable: informe de diagnóstico</span>
+            </div>
+          </li>
+          <li class="stage">
+            <div class="stage__body">
+              <span class="stage__node" aria-hidden="true"></span>
+              <span class="stage__step" aria-hidden="true">02</span>
+              <h3 class="stage__title">Diseño de soluciones</h3>
+              <p class="stage__subtitle">Armamos el plan a medida.</p>
+              <p class="stage__desc">Seleccionamos dentro de nuestra red al equipo interdisciplinario que mejor responde a tu caso y elaboramos propuestas concretas, adaptadas a los recursos y la cultura de tu organización. Nada de plantillas cerradas.</p>
+              <span class="stage__deliverable">Entregable: plan de trabajo y propuesta técnica</span>
+            </div>
+          </li>
+          <li class="stage">
+            <div class="stage__body">
+              <span class="stage__node" aria-hidden="true"></span>
+              <span class="stage__step" aria-hidden="true">03</span>
+              <h3 class="stage__title">Implementación</h3>
+              <p class="stage__subtitle">Lo ponemos en marcha, con el equipo interno.</p>
+              <p class="stage__desc">Acompañamos la ejecución día a día para que las soluciones se vuelvan prácticas cotidianas y no documentos guardados en un cajón. Transferimos conocimiento al equipo de la organización.</p>
+              <span class="stage__deliverable">Entregable: soluciones implementadas + capacitación</span>
+            </div>
+          </li>
+          <li class="stage">
+            <div class="stage__body">
+              <span class="stage__node" aria-hidden="true"></span>
+              <span class="stage__step" aria-hidden="true">04</span>
+              <h3 class="stage__title">Seguimiento y evaluación</h3>
+              <p class="stage__subtitle">Medimos el impacto y ajustamos.</p>
+              <p class="stage__desc">Evaluamos resultados con informes técnicos de retroalimentación, identificamos lo que funcionó y lo que hay que corregir, y consolidamos lo implementado.</p>
+              <span class="stage__deliverable">Entregable: informe de impacto y recomendaciones</span>
+            </div>
+          </li>
+        </ol>
+
+      </div>
+
+      <div class="method-cta" id="metodologia-cta">
+        <div class="method-cta__text">
+          <h3>¿Dónde está parada hoy tu organización?</h3>
+          <p>Contanos tu caso y te decimos desde qué etapa conviene arrancar.</p>
+        </div>
+        <a href="#contacto" class="btn btn--ghost">Escribinos →</a>
+      </div>
+    </section>
+
+
+    <!-- ── 06. EQUIPO ────────────────────────────────────── -->
+    <section class="section" id="equipo">
+      <header class="section__head">
+        <span class="section__num">06</span>
+        <span class="section__kicker">Quiénes somos</span>
+      </header>
+
+      <h2 class="section__title">
+        Tenemos raíces<br>
+        y trayectoria
+      </h2>
+
+      <p class="section__lead">
+        Grupo Estepa está dirigido por dos profesionales con trayectoria
+        en ámbitos públicos, privados y académicos. Detrás, una red de
+        especialistas interdisciplinarios que se activa según el proyecto.
+      </p>
+
+      <div class="team">
+        <article class="person">
+          <figure class="person__photo placeholder">
+            <span class="placeholder__label">Retrato · Juana</span>
+          </figure>
+          <div class="person__body">
+            <span class="person__role">Directora y co-fundadora</span>
+            <h3>Juana Gargaglione</h3>
+            <p class="person__brief">
+              Socióloga (UNLP). Especialista en gestión organizacional
+              y fortalecimiento institucional.
+            </p>
+            <p class="person__long">
+              Formación en Estudios Organizacionales (UBA) y Gestión
+              Legislativa (HSN). Experiencia en planificación estratégica,
+              diseño de herramientas de gestión y análisis de información
+              para la toma de decisiones en ámbitos públicos y privados.
+            </p>
+          </div>
+        </article>
+
+        <article class="person">
+          <figure class="person__photo placeholder">
+            <span class="placeholder__label">Retrato · Gerónimo</span>
+          </figure>
+          <div class="person__body">
+            <span class="person__role">Director y co-fundador</span>
+            <h3>Gerónimo Martín Erdmann Mc Donald</h3>
+            <p class="person__brief">
+              Abogado y Magíster en Derechos Humanos (UNLP). Especialista
+              en análisis normativo y estructuración legal de organizaciones.
+            </p>
+            <p class="person__long">
+              Formación en Economía Política y Relaciones del Trabajo (UNR)
+              y Gestión Legislativa (HSN). Docente universitario. Experiencia
+              en gestión pública, planificación estratégica y dirección de
+              equipos interdisciplinarios.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <aside class="network">
+        <h3>Una red que se activa según el proyecto.</h3>
+        <p>
+          Grupo Estepa está integrado por profesionales con trayectorias
+          en universidades nacionales, investigación científica (CONICET),
+          estudios jurídicos, cargos gerenciales del sector privado y
+          direcciones relevantes del sector público.
+        </p>
+        <p>
+          Para cada cliente, conformamos un equipo específico con las
+          personas correctas para el desafío planteado. No somos una
+          estructura fija que ofrece lo mismo a todos: somos una red
+          que se organiza alrededor del problema.
+        </p>
+      </aside>
+    </section>
+
+
+    <!-- ── 07. IDENTIDAD REGIONAL ────────────────────────── -->
+    <section class="section section--manifesto" id="manifiesto">
+      <header class="section__head section__head--light">
+        <span class="section__num">07</span>
+        <span class="section__kicker">Identidad regional</span>
+      </header>
+
+      <div class="manifesto">
+        <h2>Somos de acá</h2>
+
+        <p>
+          Estepa es el bioma donde vivimos. Vegetación, fauna y clima
+          que se encuentran y, en su encuentro, generan comunidad.
+        </p>
+
+        <hr class="manifesto__rule">
+
+        <p>
+          Quienes integramos Grupo Estepa somos patagónicos y patagónicas,
+          con un profundo sentido de pertenencia. Nos formamos en distintas
+          partes del país y del mundo para volver con más herramientas
+          a nuestras raíces.
+        </p>
+
+        <p>
+          Sabemos que en este ambiente, a veces hostil, siempre hay una
+          oportunidad de crecimiento.
+        </p>
+
+        <p class="manifesto__close">
+          Para nosotros.<br>
+          Para nuestra comunidad.<br>
+          Para la región.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ── 08. CONTACTO ──────────────────────────────────── -->
+    <section class="section" id="contacto">
+      <header class="section__head">
+        <span class="section__num">08</span>
+        <span class="section__kicker">Contacto</span>
+      </header>
+
+      <h2 class="section__title">
+        Contanos<br>
+        qué está pasando
+      </h2>
+
+      <p class="section__lead">
+        La primera conversación es sin costo y sirve para entender
+        cómo podemos ayudarte.
+      </p>
+
+      <div class="contact">
+        <aside class="contact__direct">
+          <a href="#" class="direct">
+            <span class="direct__tag">WhatsApp</span>
+            <span class="direct__val">299 409 0352</span>
+            <span class="direct__arrow">→</span>
+          </a>
+          <a href="mailto:consultora.grupoestepa@gmail.com" class="direct">
+            <span class="direct__tag">Email</span>
+            <span class="direct__val">consultora.grupoestepa@gmail.com</span>
+            <span class="direct__arrow">→</span>
+          </a>
+        </aside>
+
+        <form class="form" novalidate>
+          <p class="form__intro">
+            Dejanos tu consulta y te respondemos a la brevedad.
+            <span>Los campos marcados con * son obligatorios.</span>
+          </p>
+
+          <div class="field">
+            <label for="f-name">Nombre y apellido *</label>
+            <input id="f-name" type="text" placeholder="Juan Pérez" required>
+          </div>
+
+          <div class="field">
+            <label for="f-org">Empresa u organización *</label>
+            <input id="f-org" type="text" placeholder="Tu empresa" required>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="f-city">Ciudad / Provincia</label>
+              <input id="f-city" type="text" placeholder="Neuquén">
+            </div>
+            <div class="field">
+              <label for="f-phone">Teléfono</label>
+              <input id="f-phone" type="tel" placeholder="Cod. área + número">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-email">Email *</label>
+            <input id="f-email" type="email" placeholder="juan.perez@ejemplo.com" required>
+          </div>
+
+          <div class="field">
+            <label for="f-msg">Contanos brevemente tu consulta *</label>
+            <textarea id="f-msg" rows="5" placeholder="Ej: Necesitamos ordenar procesos administrativos en una empresa familiar…" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--solid btn--block">
+            Enviar consulta →
+          </button>
+
+          <p class="form__note">
+            Recibirás respuesta dentro de las próximas 48 horas hábiles.
+          </p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ── FOOTER ──────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <img src="img/logo-hero.svg" alt="Grupo Estepa" class="footer__logo">
+        <p>Consultoría integral.<br>Patagonia, Argentina.</p>
+      </div>
+
+      <div class="footer__col">
+        <span class="footer__label">Contacto</span>
+        <p>consultora.grupoestepa@gmail.com</p>
+        <p>WhatsApp · 299 409 0352</p>
+      </div>
+
+      <div class="footer__col">
+        <span class="footer__label">Redes</span>
+        <p>
+          <a href="#">Instagram</a> ·
+          <a href="#">Facebook</a> ·
+          <a href="#">LinkedIn</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© 2026 Grupo Estepa.</span>
+      <span>Todos los derechos reservados.</span>
+    </div>
+  </footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
