@@ -46,10 +46,7 @@
     .from('.hero__ctas .btn', {
       opacity: 0, y: 18,
       duration: 0.6, stagger: 0.1, ease: 'power2.out'
-    }, '-=0.45')
-    .from('.hero__scroll', {
-      opacity: 0, duration: 0.5
-    }, '-=0.2');
+    }, '-=0.45');
 
 
   /* ══════════════════════════════════════════════════════════
