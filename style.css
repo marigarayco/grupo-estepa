@@ -863,8 +863,6 @@ body.nav-open {
 }
 
 .dual__col h3 {
-  font-family: var(--f-body);
-  font-weight: 700;
   font-variation-settings: "wght" 700;
   font-size: clamp(1.75rem, 3vw, 2.6rem);
   margin-bottom: 0;
