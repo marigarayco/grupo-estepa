@@ -70,10 +70,9 @@
   const qhMM = gsap.matchMedia();
 
   qhMM.add('(min-width: 900px)', () => {
-    /* Fija el título en 5.5rem antes de que GSAP lo anime */
     gsap.set('#que-hacemos .section__title', { fontSize: '5.5rem' });
+    gsap.set('#que-hacemos .block', { opacity: 0, x: 40 });
 
-    /* lead sube antes de que la sección llegue al tope */
     gsap.from('#que-hacemos .section__lead', {
       autoAlpha: 0, y: 14,
       ease: 'power2.out',
@@ -82,37 +81,34 @@
         trigger: '#que-hacemos',
         start: 'top 32%',
         once: true,
+        invalidateOnRefresh: true,
       }
     });
 
+    /* Scrub unificado: título encoge y blocks se descubren de a uno,
+       todo sincronizado con el mismo scroll — sin triggers independientes
+       que puedan coflictuar entre sí */
     gsap.timeline({
       scrollTrigger: {
         trigger: '#que-hacemos',
         start: 'top top',
         end: 'bottom bottom',
         scrub: 1.4,
+        invalidateOnRefresh: true,
       }
     })
-      /* título encoge de 5.5 → 4rem */
-      .to('#que-hacemos .section__title', {
-        fontSize: '4rem',
-        ease: 'power1.inOut',
-        duration: 0.55,
-      }, 0);
-
-    /* blocks entran una sola vez (no revierten al hacer scroll de vuelta) */
-    gsap.from('#que-hacemos .block', {
-      x: 64,
-      opacity: 0,
+    .to('#que-hacemos .section__title', {
+      fontSize: '3.2rem',
+      ease: 'power1.inOut',
+      duration: 0.5,
+    }, 0)
+    .to('#que-hacemos .block', {
+      opacity: 1,
+      x: 0,
       ease: 'power2.out',
-      duration: 0.7,
-      stagger: 0.14,
-      scrollTrigger: {
-        trigger: '#que-hacemos .grid-4',
-        start: 'top 85%',
-        once: true,
-      },
-    });
+      duration: 0.3,
+      stagger: 0.2,
+    }, 0.2);
   });
 
   qhMM.add('(max-width: 899px)', () => {
@@ -139,16 +135,24 @@
       start: 'top bottom',
       end: 'top 35%',
       scrub: true,
+      invalidateOnRefresh: true,
     }
   })
-  .from('.title-slide--left',  { x: () => -window.innerWidth, ease: 'none', duration: 1 }, 0)
-  .from('.title-slide--right', { x: () => window.innerWidth,  ease: 'none', duration: 1 }, 0)
-  .from('.title-slide--y',     { autoAlpha: 0, ease: 'none', duration: 0.2 }, 0.8);
+  .fromTo('.title-slide--left',  { x: () => -window.innerWidth }, { x: 0, ease: 'none', duration: 1 }, 0)
+  .fromTo('.title-slide--right', { x: () => window.innerWidth  }, { x: 0, ease: 'none', duration: 1 }, 0)
+  .fromTo('.title-slide--y',     { autoAlpha: 0 },                { autoAlpha: 1, ease: 'none', duration: 0.2 }, 0.8);
   onScroll('#publico-privado .section__lead', { opacity: 0, y: 22, duration: 0.8, ease: 'power2.out', delay: 0.15 });
 
-  /* columnas del dual entran una sola vez — scrub las hacía desaparecer al volver */
+  /* columnas del dual: toggleActions en lugar de once:true para que el trigger
+     sobreviva a resize y re-mida. Sin invalidateOnRefresh porque en gsap.from()
+     invalidate() re-captura el estado actual (opacity:0) como destino, rompiendo
+     la animación */
   gsap.timeline({
-    scrollTrigger: { trigger: '.dual', start: 'top 80%', once: true }
+    scrollTrigger: {
+      trigger: '.dual',
+      start: 'top 75%',
+      toggleActions: 'play none none none',
+    }
   })
     .from('.dual__col:first-child', { opacity: 0, x: -60, ease: 'power2.out', duration: 0.55 })
     .from('.dual__hinge',           { opacity: 0, scaleY: 0.4, ease: 'power2.out', duration: 0.25 }, '-=0.1')
@@ -203,6 +207,7 @@
           start: 'top 82%',
           end: 'bottom 55%',
           scrub: 0.9,
+          invalidateOnRefresh: true,
         },
       });
     }
@@ -249,6 +254,8 @@
         scrub: 1,
         pin: true,
         pinSpacing: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
       }
     });
 
@@ -331,12 +338,12 @@
   gsap.from('.direct', {
     opacity: 0, x: -22,
     duration: 0.65, stagger: 0.12, ease: 'power2.out',
-    scrollTrigger: { trigger: '.contact', start: 'top 82%', once: true }
+    scrollTrigger: { trigger: '.contact', start: 'top 95%', once: true }
   });
   gsap.from('.form', {
     opacity: 0, y: 24,
     duration: 0.85, ease: 'power2.out',
-    scrollTrigger: { trigger: '.contact', start: 'top 82%', once: true }
+    scrollTrigger: { trigger: '.contact', start: 'top 95%', once: true }
   });
 
   /* ── Card toggle (mobile) ─────────────────────────────────── */
@@ -395,6 +402,7 @@
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && panel.classList.contains('is-open')) closeMenu();
   });
+
 
 })();
 
@@ -485,4 +493,14 @@
       submitBtn.textContent = 'Enviar consulta →';
     }
   });
+
+  /* Recalcula posiciones de ScrollTrigger una vez que fonts e imágenes
+     terminaron de cargar — el doble rAF asegura que el browser ya completó
+     la restauración del scroll antes de que ScrollTrigger mida posiciones */
+  window.addEventListener('load', () =>
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => ScrollTrigger.refresh())
+    )
+  );
+  document.fonts.ready.then(() => ScrollTrigger.refresh());
 })();

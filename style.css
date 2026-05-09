@@ -591,7 +591,7 @@ body.nav-open {
 
 
 @media (max-width: 900px) {
-  .hero__meta { visibility: hidden; }
+  .hero__meta { visibility: visible; }
   .hero {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto auto;
@@ -1002,13 +1002,12 @@ body.nav-open {
   display: none;
 }
 
-.card:hover::before,
-.card:hover::after {
-  background: rgba(255,254,247,0.15);
-}
-
 /* Card activa se expande, su hermana en la misma columna se comprime */
 @media (hover: hover) {
+  .card:hover::before,
+  .card:hover::after {
+    background: rgba(255,254,247,0.15);
+  }
   .grid-3__col:has(.card:hover) .card:not(:hover) {
     flex-grow: 0.45;
   }
@@ -1089,35 +1088,27 @@ body.nav-open {
   padding-top: 0;
   border-top: none;
 }
-.card:hover,
 .card--active {
   background: #00252b;
 }
-.card:hover .card__num,
 .card--active .card__num {
   color: rgba(255,254,247,0.45);
 }
-.card:hover h3,
 .card--active h3,
-.card:hover .card__pitch,
 .card--active .card__pitch {
   color: #fffef7;
 }
-.card:hover .card__ico svg,
 .card--active .card__ico svg {
   stroke: rgba(255,254,247,0.75);
 }
-.card:hover .card ul,
 .card--active .card ul {
   border-top-color: rgba(255,254,247,0.1);
 }
-.card:hover .card__desc,
 .card--active .card__desc {
   opacity: 1;
   max-height: 160px;
   color: rgba(255,254,247,0.6);
 }
-.card:hover ul,
 .card--active ul {
   opacity: 1;
   max-height: 240px;
@@ -1125,10 +1116,43 @@ body.nav-open {
   padding-top: 0.5rem;
   border-top: 1px solid rgba(255,254,247,0.1);
 }
-.card:hover ul li,
 .card--active ul li {
   color: rgba(255,254,247,0.72);
   border-bottom-color: rgba(255,254,247,0.09);
+}
+@media (hover: hover) {
+  .card:hover {
+    background: #00252b;
+  }
+  .card:hover .card__num {
+    color: rgba(255,254,247,0.45);
+  }
+  .card:hover h3,
+  .card:hover .card__pitch {
+    color: #fffef7;
+  }
+  .card:hover .card__ico svg {
+    stroke: rgba(255,254,247,0.75);
+  }
+  .card:hover .card ul {
+    border-top-color: rgba(255,254,247,0.1);
+  }
+  .card:hover .card__desc {
+    opacity: 1;
+    max-height: 160px;
+    color: rgba(255,254,247,0.6);
+  }
+  .card:hover ul {
+    opacity: 1;
+    max-height: 240px;
+    margin-top: 0.35rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255,254,247,0.1);
+  }
+  .card:hover ul li {
+    color: rgba(255,254,247,0.72);
+    border-bottom-color: rgba(255,254,247,0.09);
+  }
 }
 
 @media (max-width: 1000px) {
@@ -1629,6 +1653,7 @@ body.nav-open {
   filter: grayscale(0%);
   transform: scale(1.06);
 }
+
 
 .person:hover .person__photo::after,
 .person:has(.person__long.is-open) .person__photo::after {
