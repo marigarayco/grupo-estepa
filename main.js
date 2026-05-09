@@ -16,14 +16,6 @@
   }, { passive: true });
 
 
-  /* ── Card tap for mobile (hover no disponible en touch) ───── */
-  document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('click', () => {
-      card.classList.toggle('card--active');
-    });
-  });
-
-
   if (reduceMotion) return;
 
 
