@@ -313,6 +313,7 @@ body.nav-open {
   max-width: var(--max);
   margin: 0 auto;
   border-top: var(--border-hair);
+  scroll-margin-top: var(--nav-h);
 }
 
 .section__head {
@@ -371,6 +372,7 @@ body.nav-open {
 .title-slide--right {
   will-change: transform;
   z-index: 1;
+  padding-right: 0.08em;
 }
 
 .title-slide--y {
@@ -1247,6 +1249,12 @@ body.nav-open {
 
 
 /* ── 05. METODOLOGÍA ─────────────────────────────────── */
+
+/* Pin spacer de GSAP: hereda el fondo oscuro para que el scroll pinned no
+   muestre el blanco de la página al subir */
+.pin-spacer:has(#metodologia) {
+  background: #00252b;
+}
 
 /* Sección oscura full-bleed */
 .section--metodologia {
