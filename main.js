@@ -121,18 +121,27 @@
   /* ══════════════════════════════════════════════════════════
      03. PÚBLICO + PRIVADO
   ══════════════════════════════════════════════════════════ */
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: '#publico-privado .section__title',
-      start: 'top bottom',
-      end: 'top 35%',
-      scrub: true,
-      invalidateOnRefresh: true,
-    }
-  })
-  .fromTo('.title-slide--left',  { x: () => -window.innerWidth }, { x: 0, ease: 'none', duration: 1 }, 0)
-  .fromTo('.title-slide--right', { x: () => window.innerWidth  }, { x: 0, ease: 'none', duration: 1 }, 0)
-  .fromTo('.title-slide--y',     { autoAlpha: 0 },                { autoAlpha: 1, ease: 'none', duration: 0.2 }, 0.8);
+  const ppMM = gsap.matchMedia();
+
+  ppMM.add('(min-width: 900px)', () => {
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '#publico-privado .section__title',
+        start: 'top bottom',
+        end: 'top 35%',
+        scrub: true,
+        invalidateOnRefresh: true,
+      }
+    })
+    .fromTo('.title-slide--left',  { x: () => -window.innerWidth }, { x: 0, ease: 'none', duration: 1 }, 0)
+    .fromTo('.title-slide--right', { x: () => window.innerWidth  }, { x: 0, ease: 'none', duration: 1 }, 0)
+    .fromTo('.title-slide--y',     { autoAlpha: 0 },                { autoAlpha: 1, ease: 'none', duration: 0.2 }, 0.8);
+  });
+
+  ppMM.add('(max-width: 899px)', () => {
+    onScroll('#publico-privado .section__title', { opacity: 0, y: 32, duration: 0.9, ease: 'power3.out' });
+  });
+
   onScroll('#publico-privado .section__lead', { opacity: 0, y: 22, duration: 0.8, ease: 'power2.out', delay: 0.15 });
 
   /* columnas del dual: toggleActions en lugar de once:true para que el trigger
