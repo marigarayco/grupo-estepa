@@ -121,9 +121,6 @@
   /* ══════════════════════════════════════════════════════════
      03. PÚBLICO + PRIVADO
   ══════════════════════════════════════════════════════════ */
-  /* ══════════════════════════════════════════════════════════
-     03. PÚBLICO + PRIVADO
-  ══════════════════════════════════════════════════════════ */
   gsap.timeline({
     scrollTrigger: {
       trigger: '#publico-privado .section__title',
@@ -341,18 +338,46 @@
     scrollTrigger: { trigger: '.contact', start: 'top 95%', once: true }
   });
 
-  /* ── Card toggle (mobile) ─────────────────────────────────── */
-  const mobileCards = window.matchMedia('(hover: none)');
+  /* ── Card toggle (mobile/touch) ──────────────────────────── */
+  function isCardInteractive() {
+    return window.matchMedia('(max-width: 1000px)').matches ||
+           window.matchMedia('(hover: none)').matches;
+  }
+
   document.querySelectorAll('.grid-3 .card').forEach(card => {
-    card.addEventListener('click', () => {
-      if (!mobileCards.matches) return;
+    const btn = card.querySelector('.card__toggle');
+
+    function toggleCard() {
+      if (!isCardInteractive()) return;
       const isActive = card.classList.toggle('card--active');
-      const btn = card.querySelector('.card__toggle');
       if (btn) btn.setAttribute('aria-expanded', String(isActive));
+    }
+
+    // Tap/click en cualquier parte de la card (excepto el botón, que lo maneja solo)
+    card.addEventListener('click', (e) => {
+      if (btn && btn.contains(e.target)) return;
+      toggleCard();
     });
+
+    // El botón maneja su propio click → accesible por teclado (Enter/Space)
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleCard();
+      });
+    }
   });
 
   /* ── Stage accordion (mobile ≤900px) ─────────────────────── */
+  const stageBreakpoint = window.matchMedia('(max-width: 900px)');
+  function updateStageFocus() {
+    document.querySelectorAll('.stage__trigger').forEach(trigger => {
+      trigger.tabIndex = stageBreakpoint.matches ? 0 : -1;
+    });
+  }
+  updateStageFocus();
+  stageBreakpoint.addEventListener('change', updateStageFocus);
+
   document.querySelectorAll('.stage__trigger').forEach(trigger => {
     trigger.addEventListener('click', () => {
       const stage = trigger.closest('.stage');
@@ -366,6 +391,22 @@
   const panel    = document.getElementById('nav-panel');
   const backdrop = document.getElementById('nav-backdrop');
 
+  function getFocusable() {
+    return Array.from(panel.querySelectorAll('a[href], button:not([disabled])'));
+  }
+
+  function trapFocus(e) {
+    if (e.key !== 'Tab') return;
+    const focusable = getFocusable();
+    const first = focusable[0];
+    const last  = focusable[focusable.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+    } else {
+      if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+    }
+  }
+
   function openMenu() {
     panel.classList.add('is-open');
     backdrop.classList.add('is-open');
@@ -374,6 +415,7 @@
     backdrop.setAttribute('aria-hidden', 'false');
     document.body.classList.add('nav-open');
     panel.querySelector('.nav__panel-close').focus();
+    panel.addEventListener('keydown', trapFocus);
   }
 
   function closeMenu() {
@@ -383,6 +425,7 @@
     panel.setAttribute('aria-hidden', 'true');
     backdrop.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('nav-open');
+    panel.removeEventListener('keydown', trapFocus);
     burger.focus();
   }
 

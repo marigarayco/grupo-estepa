@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Grupo Estepa</title>
 
+  <meta name="description" content="Consultora integral estratégica para organizaciones públicas y privadas de la Patagonia. Soluciones a medida desde Neuquén y Río Negro, con mirada interdisciplinaria.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Grupo Estepa">
+  <meta property="og:description" content="Consultora integral estratégica para organizaciones públicas y privadas de la Patagonia. Soluciones a medida desde Neuquén y Río Negro, con mirada interdisciplinaria.">
+  <meta property="og:url" content="https://grupoestepa.com.ar">
+  <meta property="og:image" content="https://grupoestepa.com.ar/img/og-image.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Roboto+Flex:opsz,wght@8..144,100..900&display=swap" rel="stylesheet">
@@ -43,7 +50,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
       </button>
     </div>
-    <nav class="nav__panel-menu" aria-label="Menú principal">
+    <nav class="nav__panel-menu" aria-label="Navegación mobile">
       <a href="#que-hacemos">Qué hacemos</a>
       <a href="#publico-privado">Público + Privado</a>
       <a href="#areas">Áreas</a>
@@ -58,8 +65,9 @@
 
     <!-- ── 01. HERO ──────────────────────────────────────── -->
     <section class="hero" id="hero">
-      <video class="hero__video" autoplay muted loop playsinline>
+      <video class="hero__video" autoplay muted loop playsinline preload="none">
         <source src="img/videos/hero.webm" type="video/webm">
+        <source src="img/videos/hero.mp4" type="video/mp4">
       </video>
 
       <div class="hero__meta">
@@ -80,7 +88,7 @@
 
       <div class="hero__ctas">
         <a href="#contacto" class="btn btn--solid">Conversemos</a>
-        <a href="#contacto" class="btn btn--ghost">WhatsApp</a>
+        <a href="https://wa.me/5492994090352" target="_blank" rel="noopener noreferrer" class="btn btn--ghost">WhatsApp</a>
       </div>
 
     </section>
@@ -469,8 +477,8 @@
 
       <div class="team">
         <article class="person">
-          <figure class="person__photo ">
-            <img src="img/juana-gargaglione.webp" alt="Juana Gargaglione">
+          <figure class="person__photo">
+            <img src="img/juana-gargaglione.webp" alt="Juana Gargaglione" loading="lazy">
           </figure>
           <div class="person__body">
             <span class="person__role">Directora y co-fundadora</span>
@@ -492,7 +500,7 @@
 
         <article class="person">
           <figure class="person__photo">
-            <img src="img/geronimo-erdmann.webp" alt="Gerónimo Erdmann" style="object-position: 60% top;">
+            <img src="img/geronimo-erdmann.webp" alt="Gerónimo Erdmann" loading="lazy" style="object-position: 60% top;">
           </figure>
           <div class="person__body">
             <span class="person__role">Director y co-fundador</span>
@@ -529,7 +537,7 @@
           </p>
         </div>
         <figure class="network__photo">
-          <img src="img/equipo.webp" alt="Equipo Grupo Estepa">
+          <img src="img/equipo.webp" alt="Equipo Grupo Estepa" loading="lazy">
         </figure>
       </aside>
     </section>
@@ -571,8 +579,9 @@
 
         <div class="manifesto__video-col" aria-hidden="true">
           <div class="manifesto__video-wrap">
-            <video autoplay muted loop playsinline>
+            <video autoplay muted loop playsinline preload="none">
               <source src="img/videos/video-manifiesto.webm" type="video/webm">
+              <source src="img/videos/video-manifiesto.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -626,7 +635,7 @@
 
           <div class="field">
             <label for="f-org">Empresa u organización *</label>
-            <input id="f-org" name="organization" type="text" placeholder="Tu empresa" required>
+            <input id="f-org" name="organization" type="text" placeholder="Tu empresa" required autocomplete="organization">
             <span class="field__error" id="error-org" role="alert"></span>
           </div>
 
