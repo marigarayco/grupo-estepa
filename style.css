@@ -923,7 +923,20 @@ body.nav-open {
 
 @media (max-width: 860px) {
   .dual { grid-template-columns: 1fr; }
-  .dual__col:first-child { padding-left: 2.5rem; }
+  .dual__col,
+  .dual__col:first-child { padding-left: 0; }
+  .dual__col--b,
+  #publico-privado .dual__col--b { background: none; }
+  #publico-privado .articulation {
+    background: rgba(255, 254, 247, 0.04);
+    border: none;
+    margin-left: calc(-1 * var(--bleed-pad));
+    margin-right: calc(-1 * var(--bleed-pad));
+    margin-bottom: 0;
+    padding-left: var(--bleed-pad);
+    padding-right: var(--bleed-pad);
+  }
+  #publico-privado.section { padding-bottom: 0; }
   .dual__hinge {
     width: auto;
     height: 1px;
