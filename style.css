@@ -615,21 +615,17 @@ body.nav-open {
 }
 
 
-/* ── 02. QUÉ HACEMOS — scroll-driven sticky ─────────── */
+/* ── 02. QUÉ HACEMOS ────────────────────────────────── */
 #que-hacemos.section {
   padding: 0;
   max-width: none;
   margin: 0;
-  min-height: 300svh;
-  min-height: 300vh;
 }
 
 .qh-sticky {
-  position: sticky;
-  top: 0;
-  height: 100svh;
-  height: 100vh;
-  overflow: hidden;
+  position: relative;
+  height: auto;
+  overflow: visible;
   padding: clamp(4rem, 9vw, 9rem) var(--pad-x) clamp(4rem, 9vw, 9rem);
   max-width: var(--max);
   margin: 0 auto;
@@ -753,14 +749,7 @@ body.nav-open {
 }
 
 @media (max-width: 899px) {
-  /* Deshabilitar sticky scroll-driven en móvil */
-  #que-hacemos.section {
-    min-height: auto;
-  }
   .qh-sticky {
-    position: relative;
-    height: auto;
-    overflow: visible;
     padding-top: clamp(3rem, 8vw, 5rem);
     padding-bottom: clamp(3rem, 8vw, 5rem);
   }
@@ -808,7 +797,7 @@ body.nav-open {
   background: #00252b;
   max-width: none;
   margin: 0;
-  overflow-x: hidden;
+  overflow: clip;
   border-top: 1px solid rgba(255,254,247,0.1);
   padding: clamp(4rem, 9vw, 9rem) var(--bleed-pad);
   z-index: 1;
